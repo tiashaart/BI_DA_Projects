@@ -1,0 +1,301 @@
+# Resume Screening & Recruitment Analytics
+## A Data-Driven Investigation into Candidate Profiles and Hiring Outcomes
+
+**Project Type:** Data Analytics and Business Intelligence  
+**Tools:** Python (Pandas), SQL, Power BI, DAX  
+**Dataset:** `resume_dataset_200k_enhanced.csv`  
+**Dataset Size:** Approximately 200,000 candidate records
+
+---
+
+## 1. Executive Summary
+
+Recruitment decisions involve evaluating candidates with different educational backgrounds, levels of experience, technical skills, and professional achievements. Understanding how these characteristics relate to recorded hiring outcomes can help organizations investigate recruitment patterns and identify areas for further analysis.
+
+This project explores approximately 200,000 candidate records to examine the relationship between candidate characteristics and hiring outcomes. Using Python for data preparation, SQL for structured analysis, and Power BI for interactive visualization, the project transforms a large dataset into an accessible analytical report.
+
+The analysis focuses on five key areas: overall hiring outcomes, educational background, professional experience, candidate qualifications, and skills-related scores.
+
+The final dashboard provides an interactive environment in which users can compare candidate groups, examine selection rates, and investigate differences between candidates recorded as hired and those recorded as not hired.
+
+The purpose is not to determine a universally ideal candidate profile. Instead, it is to identify patterns in the available data, communicate their business relevance, and recommend further investigation before using the findings to influence recruitment decisions.
+
+## 2. The Business Story: Why Does Recruitment Analytics Matter?
+
+Imagine an HR team reviewing thousands of resumes. Each resume contains information about education, experience, internships, projects, certifications, and skills.
+
+Although individual resumes provide information about individual applicants, they do not easily reveal patterns across a large candidate population.
+
+Questions begin to emerge:
+
+- Which education categories contribute the largest number of candidates?
+- Does the recorded selection rate differ across university tiers?
+- How do experience levels vary between selected and not-selected candidates?
+- Are average technical and soft-skills scores different between the two groups?
+- Do candidates with different numbers of projects or internships have different recorded outcomes?
+
+Without structured analysis, these questions can be difficult to answer consistently.
+
+This project addresses that challenge by turning candidate-level data into a set of measurable indicators and interactive visualizations. Instead of relying on assumptions about recruitment, the dashboard allows users to explore what the dataset actually shows.
+
+## 3. Project Objectives
+
+The project was developed to:
+
+1. Analyze candidate characteristics across approximately 200,000 records.
+2. Measure the distribution of recorded hiring outcomes.
+3. Compare hiring outcomes across education and university-tier categories.
+4. Investigate experience, internships, projects, and other qualifications.
+5. Compare technical and soft-skills scores by hiring status.
+6. Develop an interactive Power BI dashboard for exploring candidate segments.
+7. Translate analytical findings into practical, evidence-based recommendations.
+
+## 4. Understanding the Data
+
+The analysis uses a structured CSV dataset containing candidate characteristics and a binary `hired` outcome.
+
+The available fields include:
+
+- Candidate ID and age
+- Education level and university tier
+- CGPA
+- Internship and project counts
+- Programming-language and certification counts
+- Years of experience
+- Hackathons and research papers
+- Technical skills score
+- Soft-skills score
+- Resume length
+- Company type
+- Hiring outcome
+
+The `hired` field is used as the outcome variable, with `1` representing hired or selected and `0` representing not hired or not selected, subject to confirmation from the dataset documentation.
+
+An important limitation is that the available fields do not necessarily include job titles, candidate locations, individual skill names, application dates, or recruitment-stage history. Therefore, the analysis focuses on candidate characteristics and recorded outcomes rather than actual recruitment funnel performance.
+
+## 5. From Raw Data to Reliable Analysis
+
+Before interpreting the results, the dataset must be prepared carefully.
+
+### Data preparation with Python
+
+Pandas is used to inspect the dataset, understand its structure, identify missing values and duplicates, investigate invalid values, and prepare the data for analysis.
+
+Particular attention is given to numerical fields such as CGPA, experience, skills scores, and resume length. Unexpected values are investigated according to appropriate data-quality rules.
+
+### Structured analysis with SQL
+
+SQL is used to organize the analytical questions into reusable queries. Aggregations and conditional calculations help compare candidate groups and summarize hiring outcomes.
+
+Advanced SQL techniques, including grouping and window functions, can be used where appropriate to compare categories and rank results.
+
+### Data modeling and visualization with Power BI
+
+The prepared CSV is imported into Power BI Desktop. Since the project begins with a single candidate table, a single-table model is sufficient.
+
+DAX measures are created to calculate candidate counts, selection rates, and average candidate characteristics dynamically. Interactive slicers allow users to investigate specific education levels, university tiers, experience groups, company types, and hiring statuses.
+
+This workflow connects data preparation, analytical reasoning, and visual storytelling in one project.
+
+## 6. Chapter One: Understanding the Recruitment Landscape
+
+The first dashboard page, **Recruitment Overview**, establishes the overall picture.
+
+The analysis begins with the total number of candidate records, the number recorded as hired, the number recorded as not hired, and the overall selection rate.
+
+These metrics establish the baseline against which more detailed comparisons can be made.
+
+The dashboard then examines candidate distribution by education level and experience group. This reveals how the candidate population is structured and which categories contribute the greatest number of records.
+
+The distinction between candidate volume and selection rate is important. A category may contain many candidates without necessarily having a high selection rate. Similarly, a category with a high selection rate may contain relatively few records.
+
+**Results to report after refreshing the dashboard:**
+
+- Total candidate records: [Insert actual value]
+- Selected candidates: [Insert actual value]
+- Not-selected candidates: [Insert actual value]
+- Overall selection rate: [Insert actual percentage]
+- Average experience: [Insert actual value]
+- Average CGPA: [Insert actual value]
+
+**The business question:** What does the overall candidate population look like, and what is the baseline hiring outcome against which all other patterns should be compared?
+
+## 7. Chapter Two: Looking Beyond the Resume
+
+The second dashboard page, **Candidate & Skills Analysis**, moves from overall recruitment outcomes to candidate characteristics.
+
+A resume contains more than an education label. Candidates may differ in academic performance, internships, project experience, certifications, research activity, and skills-related scores.
+
+This page explores those characteristics individually and compares selected and not-selected candidates where appropriate.
+
+### Education and academic performance
+
+CGPA distribution helps describe the academic profiles represented in the dataset. University-tier comparisons provide another way to examine candidate composition and recorded outcomes.
+
+These comparisons should not be interpreted as proof that a particular institution or CGPA causes a hiring decision.
+
+### Experience and practical exposure
+
+Internship and project counts provide indicators of recorded practical exposure. Experience groups help summarize how candidates are distributed across different levels of professional experience.
+
+Comparing selection rates across these groups can reveal differences worth investigating further.
+
+### Skills and professional achievements
+
+Technical skills scores and soft-skills scores are compared by hiring status. Certification counts, programming-language counts, hackathons, and research papers provide additional dimensions for understanding the candidate population.
+
+These are indicators available in the dataset, not a complete representation of a person's abilities or potential.
+
+**Results to report after refreshing the dashboard:**
+
+- Average CGPA by hiring status: [Insert actual values]
+- Average experience by hiring status: [Insert actual values]
+- Average technical skills score by hiring status: [Insert actual values]
+- Average soft-skills score by hiring status: [Insert actual values]
+- Selection rate by internship group: [Insert actual percentages]
+- Selection rate by project group: [Insert actual percentages]
+
+**The business question:** Which candidate characteristics show meaningful differences between recorded hiring outcomes, and which patterns deserve further investigation?
+
+## 8. Chapter Three: Comparing Recruitment Outcomes
+
+The third dashboard page, **Recruitment Performance**, brings the comparisons together.
+
+Rather than simply counting candidates, this page examines selection rates across education levels, university tiers, experience groups, project counts, and company types.
+
+This changes the analytical question from:
+
+“How many candidates belong to this category?”
+
+to:
+
+“What proportion of candidates in this category were recorded as hired?”
+
+The selection rate is calculated as:
+
+Selection Rate = Selected Candidates ÷ Total Candidates × 100
+
+For each comparison, candidate counts should be displayed alongside percentages. This prevents a small category with a high selection rate from being interpreted in the same way as a much larger category.
+
+Where appropriate, the dashboard also compares candidate volume with selection rate. These metrics answer different questions and should be interpreted separately.
+
+The analysis can identify associations within the dataset, but it cannot establish that any one characteristic caused a hiring outcome. Other variables, dataset construction, and selection processes may influence the observed relationships.
+
+**Results to report after refreshing the dashboard:**
+
+- Education category with the highest observed selection rate: [Insert category and percentage]
+- University tier with the highest observed selection rate: [Insert category and percentage]
+- Experience group with the highest observed selection rate: [Insert category and percentage]
+- Project group with the highest observed selection rate: [Insert category and percentage]
+- Company type with the highest observed selection rate: [Insert category and percentage]
+
+For each result, include the corresponding candidate count and compare it with the overall selection rate.
+
+**The business question:** Where do the strongest differences in recorded hiring outcomes appear, and how reliable are those differences given the number of candidates in each group?
+
+## 9. Key Findings and Business Interpretation
+
+The final conclusions must be based on the actual results calculated from the dataset.
+
+The following framework can be completed after the dashboard has been refreshed.
+
+### Finding 1 — Overall hiring outcomes
+
+**Observation:** The overall selection rate is [X%] across [N] candidate records.
+
+**Interpretation:** This provides the baseline for understanding all subsequent comparisons.
+
+**Recommendation:** Use this measure as a reference point when investigating selection rates across candidate groups.
+
+### Finding 2 — Education and selection
+
+**Observation:** The [education category] group has a selection rate of [X%], compared with the overall rate of [Y%].
+
+**Interpretation:** The observed outcome differs between this category and the overall candidate population.
+
+**Recommendation:** Examine group sizes and other candidate characteristics before drawing conclusions about educational background.
+
+### Finding 3 — Experience and selection
+
+**Observation:** The [experience group] category has a selection rate of [X%].
+
+**Interpretation:** This indicates an observed relationship between experience-group membership and the recorded outcome.
+
+**Recommendation:** Compare experience with education, skills scores, and other available variables before using this pattern to inform recruitment practices.
+
+### Finding 4 — Technical skills scores
+
+**Observation:** The average technical skills score is [X] for selected candidates and [Y] for not-selected candidates.
+
+**Interpretation:** The difference suggests that the score distributions or averages may vary between the two groups.
+
+**Recommendation:** Investigate the size and consistency of the difference and assess how the score was constructed.
+
+### Finding 5 — Internships and projects
+
+**Observation:** The [group] category has a selection rate of [X%], based on [N] records.
+
+**Interpretation:** The outcome may differ according to recorded internship or project counts.
+
+**Recommendation:** Compare multiple candidate characteristics and investigate sample sizes before interpreting the pattern as evidence of a hiring preference.
+
+These examples are reporting templates, not findings already established by the dataset.
+
+## 10. Business Recommendations
+
+Based on the questions investigated in this project, the following recommendations can guide further analysis.
+
+**1. Monitor outcome metrics consistently.** Establish a clear baseline selection rate and compare category-level results using consistent definitions.
+
+**2. Interpret percentages alongside sample sizes.** Avoid ranking candidate groups solely by selection rate when some groups contain relatively few records.
+
+**3. Evaluate multiple candidate characteristics.** Examine education, experience, internships, projects, and skills scores together rather than assuming that one variable explains the outcome.
+
+**4. Avoid unsupported hiring assumptions.** An observed association does not establish causation or prove that a characteristic should be used as a selection criterion.
+
+**5. Improve future recruitment data collection.** If the objective is to measure actual recruitment efficiency, collect reliable application dates, interview stages, offers, acceptance outcomes, and time-to-hire data.
+
+**6. Assess fairness and data quality.** Before using candidate analytics in operational decisions, investigate potential bias, missing information, and whether the dataset represents real recruitment processes appropriately.
+
+## 11. Limitations of the Analysis
+
+Several limitations must be acknowledged.
+
+- The dataset contains candidate characteristics and a recorded binary hiring outcome; it does not necessarily describe the complete recruitment process.
+- The available columns do not support a reliable analysis of job-role demand, geographic hiring patterns, or recruitment-stage conversion unless additional data is provided.
+- The meaning and construction of individual scores must be understood before they are interpreted as valid measures of candidate ability.
+- Missing, invalid, or duplicate records can affect calculated results if not handled appropriately.
+- The dataset's source, representativeness, and methodology determine how confidently the findings can be generalized.
+- Differences between groups do not demonstrate causation.
+- The dashboard is an analytical tool, not an automated hiring recommendation system.
+
+These limitations should be included in the final portfolio documentation so that viewers understand what the analysis can and cannot establish.
+
+## 12. Final Project Deliverables
+
+The completed project brings together several stages of data analysis:
+
+1. **Python and Pandas:** Data inspection, cleaning, and preparation.
+2. **SQL:** Structured queries, aggregations, and comparative analysis.
+3. **Power BI:** Interactive dashboard development and data visualization.
+4. **DAX:** Dynamic KPIs and selection-rate calculations.
+5. **Business reporting:** Evidence-based findings, interpretations, and recommendations.
+6. **Portfolio documentation:** Project overview, data dictionary, screenshots, methodology, and limitations.
+
+The final deliverables include the Power BI report, the relevant analysis scripts and notebooks, screenshots of the dashboard pages, and a README describing the business problem and analytical approach.
+
+## 13. Conclusion: From Candidate Records to Analytical Insight
+
+This project demonstrates how a large candidate dataset can be transformed into a structured analytical resource.
+
+The journey begins with raw candidate records, moves through data validation and structured analysis, and ends with an interactive dashboard that helps users explore recruitment-related questions.
+
+The main achievement is not simply the creation of charts. It is the ability to define meaningful metrics, distinguish candidate volume from selection rate, compare groups carefully, and communicate results with appropriate evidence and limitations.
+
+By combining Python, SQL, Power BI, and business storytelling, the project demonstrates a practical data analytics workflow.
+
+Ultimately, the dashboard provides a starting point for understanding recorded hiring patterns. Its value lies in making those patterns visible, encouraging better questions, and supporting further investigation—not in treating historical outcomes as unquestionable rules for future hiring.
+
+---
+
+**Project status:** Complete the dashboard refresh, insert the actual calculated findings, verify the metrics, and capture screenshots before presenting this report as a finalized analysis.
